@@ -1,0 +1,112 @@
+/* Загальні стилі сторінки */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #1a002b, #000);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* центрує по вертикалі */
+  align-items: center; /* центрує по горизонталі */
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Хедер */
+.header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header__title {
+  font-size: 2.5em;
+  color: #ff9aff;
+  text-shadow: 0 0 15px #ff00ff;
+  margin: 0 0 15px;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0080; }
+  to { text-shadow: 0 0 25px #ff00ff, 0 0 50px #ff00cc; }
+}
+
+/* Навігація */
+.header nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Кнопки-лінки */
+.header__link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #ff00ff, #ff66ff);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.header__link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+  background: linear-gradient(45deg, #ff33ff, #ff99ff);
+}
+
+/* Основний контент */
+main {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  max-width: 800px;
+  width: 90%;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1.1em;
+}
+
+.schedule-table th, .schedule-table td {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px;
+}
+
+.schedule-table th {
+  background: rgba(255, 0, 255, 0.2);
+}
+
+.back-main {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #ff00ff, #ff66ff);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-main:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
+}

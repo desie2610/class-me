@@ -1,0 +1,193 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1b002b, #2d006b, #000d4d);
+            color: #fff;
+            min-height: 100vh;
+            background-size: 300% 300%;
+            animation: bgMove 12s ease-in-out infinite alternate;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 0, 35, 0.6);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            z-index: 1000;
+        }
+
+        .header__title {
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 0 0 25px #9f5cff, 0 0 40px #00fff0;
+            animation: glowTitle 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowTitle {
+            from { text-shadow: 0 0 15px #9f5cff, 0 0 25px #00fff0; }
+            to { text-shadow: 0 0 35px #00fff0, 0 0 55px #9f5cff; }
+        }
+
+        nav {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .header__link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 12px 26px;
+            border-radius: 40px;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 12px rgba(255,255,255,0.1);
+        }
+
+        .header__link:hover {
+            background: linear-gradient(90deg, #9f5cff, #00fff0);
+            box-shadow: 0 0 25px #00fff0, 0 0 40px #9f5cff;
+            transform: scale(1.1);
+        }
+
+        main {
+            padding-top: 220px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hobby__title {
+            font-size: 56px;
+            margin-bottom: 50px;
+            text-shadow: 0 0 25px rgba(255,255,255,0.8);
+            animation: floatText 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatText {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+/* 
+        ======== ГРИД ======== */
+        .hobby__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            justify-content: center;
+            max-width: 850px;
+            margin: 0 auto 60px auto;
+        }
+
+        .hobby__div {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 25px;
+            padding: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            animation: cardAppear 1.5s ease-in-out;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        @keyframes cardAppear {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hobby__div:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #00fff0, #9f5cff);
+            box-shadow: 0 0 40px #9f5cff, 0 0 60px #00fff0;
+        }
+
+        .hobby__img {
+            width: 100%;
+            height: 180px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            object-fit: cover;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .hobby__div:hover .hobby__img {
+            transform: scale(1.05);
+        }
+
+        .hobby__text {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        .hobby__favorite {
+            margin-top: 40px;
+            font-size: 20px;
+            color: #e0e0e0;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hobby__favorite a {
+            color: #00fff0;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hobby__favorite a:hover {
+            color: #9f5cff;
+            text-shadow: 0 0 15px #9f5cff;
+        }
+
+        .back-main {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 35px;
+            border-radius: 40px;
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .back-main:hover {
+            background: linear-gradient(90deg, #9f5cff, #00fff0);
+            box-shadow: 0 0 25px #00fff0, 0 0 40px #9f5cff;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 900px) {
+            .hobby__grid { grid-template-columns: 1fr; gap: 25px; }
+            .hobby__div { max-width: 90%; }
+            .hobby__title { font-size: 42px; }
+        }
